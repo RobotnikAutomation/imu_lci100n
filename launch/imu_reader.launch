@@ -1,0 +1,7 @@
+<launch>
+
+    <node pkg="imu_lci100n" type="imu_reader.py" name="imu" output="screen">
+        <param name="~port" value="/dev/ttyUSB0" />
+    </node>
+
+</launch>
