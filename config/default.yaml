@@ -1,0 +1,6 @@
+port: $(arg serial_port)
+baudrate: 460800
+parity: N
+stopbits: 1
+bytesize: 8
+timeout: 0.1

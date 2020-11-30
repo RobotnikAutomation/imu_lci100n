@@ -1,7 +1,9 @@
 <launch>
-
+    <arg name="serial_port" default="$(optenv ROBOT_IMU_PORT /dev/ttyUSB_IMU)" />
+    <arg name="config_file" default="$(find imu_lci100n)/config/default.yaml" />
+    
     <node pkg="imu_lci100n" type="imu_reader.py" name="imu" output="screen">
-        <param name="~port" value="/dev/ttyUSB0" />
+        <rosparam command="load" file="$(arg config_file)" subst_value="true"/>
     </node>
 
 </launch>
