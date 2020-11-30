@@ -4,3 +4,4 @@ parity: N
 stopbits: 1
 bytesize: 8
 timeout: 0.1
+imu_frame_id: $(arg imu_frame_id)

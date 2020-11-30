@@ -17,6 +17,7 @@ class IMUTest:
         self.stopbits = rospy.get_param('~stopbits', 1)
         self.bytesize = rospy.get_param('~bytesize', 8)
         self.timeout = rospy.get_param('~timeout', 0.1)
+        self.frame_id = rospy.get_param('~imu_frame_id', 'imu_link')
         
         self.pub = rospy.Publisher('~data_raw', Imu, queue_size=10)
         self.message = Imu()
@@ -68,7 +69,7 @@ class IMUTest:
 
                         # ROS MESSAGE
                         self.message.header.stamp = rospy.Time.now()
-                        self.message.header.frame_id = "imu_link"
+                        self.message.header.frame_id = self.frame_id
 
                         self.message.orientation.x = self.quaternion_1
                         self.message.orientation.y = self.quaternion_2

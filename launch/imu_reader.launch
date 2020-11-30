@@ -1,4 +1,7 @@
 <launch>
+    <arg name="id_robot" default="$(optenv ROBOT_ID robot)"/>
+    <arg name="prefix" default="$(arg id_robot)_"/>
+    <arg name="imu_frame_id" default="$(arg prefix)imu_link"/>
     <arg name="serial_port" default="$(optenv ROBOT_IMU_PORT /dev/ttyUSB_IMU)" />
     <arg name="config_file" default="$(find imu_lci100n)/config/default.yaml" />
     
